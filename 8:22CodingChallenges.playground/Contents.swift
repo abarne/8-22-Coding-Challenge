@@ -31,11 +31,11 @@ func medianOfTwoSortedArrays(_ arr1 : [Int],_ arr2 : [Int]) -> Double {
 let arr1 = [1,2]
 let arr2 = [3,4]
 
-medianOfTwoSortedArrays(arr1, arr2) //prints 2.5
+medianOfTwoSortedArrays(arr1, arr2) //returns 2.5
 
 
 /*
- 2) Mergek Sorted Lists
+ 2) Merge Sorted Lists
  You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
  Merge all the linked-lists into one sorted linked-list and return it.
 
@@ -51,3 +51,12 @@ medianOfTwoSortedArrays(arr1, arr2) //prints 2.5
  merging them into one sorted list:
  1->1->2->3->4->4->5->6
  */
+
+
+func mergeSortedLists(_ lists: [[Int]]) -> [Int] {
+    var mergedList = lists.flatMap({$0})
+    mergedList = mergedList.sorted()
+    return mergedList
+}
+
+mergeSortedLists([[1,4,5],[1,3,4],[2,6]]) //returns [1,1,2,3,4,4,5,6]
